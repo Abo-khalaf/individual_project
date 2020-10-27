@@ -1,0 +1,58 @@
+<%- include("header"); %>
+
+
+
+<main class="contianer_table">
+<h1>Account details</h1>
+
+<form class="search-form" method="get" action="/category">
+    <input class="search-style" type="text" name="search" placeholder="Search here ...">
+
+    <input class="search-style-create" type="submit" value="search">
+    </form>
+
+<!-- <pre><%#= JSON.stringify(res, null, 4) %></pre> -->
+
+<table class="table table-striped">
+    <tr>
+
+        <th scope="col"></th>
+        <th scope="col"></th>
+
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+    </tr>
+
+    <% for (const row of res1) { %>
+        <% if(row.quantity != 0) { %>
+    <tr>
+
+        <td scope="row">
+            <img class="catImg" src="/img/<%= row.photo %>"></a></td>
+            <!-- <td><%= row.Id %></td> -->
+            <td scope="row"   ><a class="card-header" href="/product-show/<%= row.Id %>">Category: <%= row.category %></a><hr>
+            Type: <%= row.type %><hr>
+            Quantity: <%= row.quantity %>
+
+            
+            
+            
+            <hr>
+            <a class="btn btn-dark" href="/show/<%= row.Id %>"><i class="" aria-hidden="true"></i> show Product</a></td>
+            
+            <% if(user.role == 'admin') { %>
+        <td>
+            <a href="/edit/<%= row.Id %>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a><hr>
+            <a href="/delete/<%= row.Id %>"><i class="fa fa-trash-o" aria-hidden="true"></i></a><hr>
+        </td>
+        <% } %>
+        
+    </tr>
+    <% } %>
+<% }; %>
+</table>
+</main>
+
+
+

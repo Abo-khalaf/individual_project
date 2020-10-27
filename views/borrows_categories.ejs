@@ -1,0 +1,52 @@
+<%- include("header"); %>
+<% if(user.role == 'admin') { %>
+
+    <div class="container">
+        <div class="page-header text-center">
+            <h1>My Borrows categorys</h1>
+            <br>
+        </div>
+
+
+        </div>
+
+
+
+
+        <table class="table table-striped">
+            <tr>
+                <th scope="col"></th>
+                
+                <th scope="col">category</th>
+                <th scope="col">type</th>
+        
+                <th scope="col">date</th>
+                <th scope="col">return_date</th>
+                <th scope="col">username</th>
+
+            </tr>
+        
+            <% for (const row of res2) { %>
+
+        
+            <tr>
+        
+                <td scope="row">
+                    <td><%= row.category %></td>
+                    <td><%= row.type %></td>
+                    <td><%= dtFormat.format(row.date1) %></td>
+                    <td><%= row.return_date %></td>
+                    <td><%= row.username %></td>
+
+                </tr>
+
+        <% }; %>
+        </table>
+</body>
+</html>
+<% } else { %>
+    <div class="mx-auto flashMass" style="width: 800px; background-color: rgba(86,61,124,.15);">
+        <h3>You are not an Admin</h3>
+    </div>
+    
+  <% } %>

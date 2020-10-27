@@ -1,0 +1,59 @@
+<%- include("header"); %>
+<% if(user.role == 'admin') { %>
+
+
+
+    <div class="mx-auto flashMass " style="width: 800px; background-color: rgba(86,61,124,.15);">
+<h1 >Delete product</h1>
+<!-- <hr>
+
+<% for (const row of res1) { %>
+    <tr>
+        <td scope="row">
+            <td><h3 class="float-left"> Id: <%=  row.Id %></h3></td><br> <br>
+            <td><h3 class="float-left">Product: <%= row.category %></h3></td><br> <br>
+
+            <td><h3 class="float-left"> Type: <%= row.type %></h3></td><br> <br>
+            <td><h3 class="float-left">Quantity: <%= row.quantity %></h3></td><br> <br>
+
+
+
+        <% } %>
+    </tr> -->
+
+
+<% res1 = res1[0] %>
+<form class="col-sm-6 col-sm-offset-3" method="post" action="/delete">
+    <fieldset>
+
+        <br>
+        <label class="float-left" for="a_id">Id: </label>
+        <input  type="text" name="a_id" value="<%= res1.Id %>" ><hr>
+
+
+        <!-- <label for="a_photo">Photo:</label>
+        <input class="form-control" id="a_photo" type="text" name="a_photo"  value="<%= res1.photo %>" > -->
+
+        <label class="float-left"  for="a_category">Category:</label>
+        <input class="form-control" id="a_category" type="text" name="a_category"  value="<%= res1.category %>">
+        <hr>
+        <!-- <label for="a_type">Type: </label>
+        <input class="form-control" id="a_type" type="text" name="a_type"  value="<%= res1.type %>">
+
+        <label for="a_quantity">Quantity: </label>
+        <input class="form-control" id="a_quantity" type="number" name="a_quantity" value="<%= res1.quantity %>"> -->
+
+        <input class="btn btn-outline-secondary float-left" style="width: 40;" type="submit" name="doit" value="Delete">
+    </fieldset>
+</form> 
+
+<% } else { %>
+    <div class="mx-auto flashMass" style="width: 800px; background-color: rgba(86,61,124,.15);">
+        <h3>You are not an Admin</h3>
+    </div>
+    
+  <% } %>
+
+
+
+</div>

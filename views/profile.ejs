@@ -1,0 +1,61 @@
+<%- include("header"); %>
+
+    <div class="container">
+        <div class="page-header text-center">
+            <h1>My Profile</h1>
+            <a href="/logout" class="btn btn-danger btn-sm">Loguot</a>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="well">
+                    <h3><span class="fa fa-user"></span>Welcome <%=user.username %></h3>
+                    
+                    <p>
+                        <strong>id</strong> <%= user.id %> <br>
+                        <strong>username</strong> <%= user.username %> <br>
+
+                        <strong>role</strong> <%= user.role %> <br>
+                        <strong>email</strong> <%= user.email %> <br>
+                    <% if(user.role == 'admin') { %>
+                        <li class="nav-item logout">
+                            <a href="/borrows_categories" class="btn btn-outline-secondary">borrows_categories</a>
+                        </li>
+                    <% } %>
+                    <hr>
+
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <table class="table table-striped">
+            <tr>
+                <th scope="col"></th>
+                
+                <th scope="col">category</th>
+                <th scope="col">type</th>
+        
+                <th scope="col">date</th>
+                <th scope="col">return_date</th>
+            </tr>
+        
+            <% for (const row of res2) { %>
+                <% if(user.id == row.userId) { %>
+        
+            <tr>
+        
+                <td scope="row">
+                    <td><%= row.category %></td>
+                    <td><%= row.type %></td>
+                    <td><%= dtFormat.format(row.date1) %></td>
+                    <td><%= row.return_date %></td>
+                </tr>
+                <% } %>
+        <% }; %>
+        </table>
+</body>
+</html>

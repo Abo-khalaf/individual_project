@@ -1,0 +1,34 @@
+<%- include("header"); %>
+<% if(user.role == 'admin') { %>
+
+
+<form class="col-sm-6 col-sm-offset-3" method="post" >
+    <fieldset>
+        <h1>Create Product</h1>
+
+        <label for="a_id">Id</label>
+        <input id="a_id" type="text" name="a_id" >
+
+        <label for="a_photo">Photo:</label>
+        <input class="form-control" id="a_photo" type="text" name="a_photo" >
+
+        <label for="a_category">Category:</label>
+        <input class="form-control" id="a_category" type="text" name="a_category" >
+
+        <label for="a_type">Type: </label>
+        <input class="form-control" id="a_type" type="text" name="a_type" >
+
+        <label for="a_quantity">Quantity: </label>
+        <input class="form-control" id="a_quantity" type="number" name="a_quantity">
+
+        <input class="btn btn-lg success" type="submit" name="doit" value="Edit">
+    </fieldset>
+</form>
+</body>
+</html>
+<% } else { %>
+    <div class="mx-auto flashMass" style="width: 800px; background-color: rgba(86,61,124,.15);">
+        <h3>You are not an Admin</h3>
+    </div>
+    
+  <% } %>

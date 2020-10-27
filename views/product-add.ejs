@@ -1,0 +1,39 @@
+<%- include("header"); %>
+
+<h1>Account details</h1>
+
+
+<pre><%#= JSON.stringify(res1, null, 4) %></pre>
+
+<table class="table table-striped">
+    <tr>
+
+        <th scope="col"></th>
+        <th scope="col"></th>
+
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+    </tr>
+
+    <% for (const row of res1) { %>
+
+    <tr>
+
+        <td scope="row">
+            <img class="catImg" src="/img/<%= row.photo %>"></a></td>
+            <!-- <td><%= row.Id %></td> -->
+            <td scope="row"><a href="/product-show/<%= row.Id %>">Category: <%= row.category %></a><hr>
+            Type: <%= row.type %><hr>
+            Quantity: <%= row.quantity %>
+
+        <td>
+
+            <a class="btn btn-dark" href="/product-add/<%= row.Id %>/<%= user.id %>"><i class="" aria-hidden="true"></i> Borrow Product</a></td>
+        </td>
+
+    </tr>
+<% }; %>
+</table>
+
+</main>
