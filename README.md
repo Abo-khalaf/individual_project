@@ -35,7 +35,7 @@ then you will write the password that you choose for the root user.
  
  
 
-![A test image](Movavi2.png) 
+![A test image](https://github.com/Abo-khalaf/individual_project/blob/main/public/img/Movavi2.jpg) 
 
  
  
@@ -78,4 +78,4 @@ _ Regular User
 
  you can see that in the Example: 
 
-![A test image](Movavi1.png) 
+![A test image](https://github.com/Abo-khalaf/individual_project/blob/main/public/img/Movavi1.jpg)
